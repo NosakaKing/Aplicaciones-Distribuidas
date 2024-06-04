@@ -2,32 +2,7 @@ DROP DATABASE IF EXISTS jardineria;
 CREATE DATABASE jardineria CHARACTER SET utf8mb4;
 USE jardineria;
 
-CREATE TABLE oficina (
-  codigo_oficina VARCHAR(10) NOT NULL,
-  ciudad VARCHAR(30) NOT NULL,
-  pais VARCHAR(50) NOT NULL,
-  region VARCHAR(50) DEFAULT NULL,
-  codigo_postal VARCHAR(10) NOT NULL,
-  telefono VARCHAR(20) NOT NULL,
-  linea_direccion1 VARCHAR(50) NOT NULL,
-  linea_direccion2 VARCHAR(50) DEFAULT NULL,
-  PRIMARY KEY (codigo_oficina)
-);
-
-CREATE TABLE empleado (
-  codigo_empleado INTEGER NOT NULL,
-  nombre VARCHAR(50) NOT NULL,
-  apellido1 VARCHAR(50) NOT NULL,
-  apellido2 VARCHAR(50) DEFAULT NULL,
-  extension VARCHAR(10) NOT NULL,
-  email VARCHAR(100) NOT NULL,
-  codigo_oficina VARCHAR(10) NOT NULL,
-  codigo_jefe INTEGER DEFAULT NULL,
-  puesto VARCHAR(50) DEFAULT NULL,
-  PRIMARY KEY (codigo_empleado),
-  FOREIGN KEY (codigo_oficina) REFERENCES oficina (codigo_oficina),
-  FOREIGN KEY (codigo_jefe) REFERENCES empleado (codigo_empleado)
-);
+c
 
 CREATE TABLE gama_producto (
   gama VARCHAR(50) NOT NULL,

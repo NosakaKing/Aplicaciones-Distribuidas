@@ -2,6 +2,10 @@
 -- En mi caso uso la tabla llamada gama_producto
 
 
+-- Primero debemos de eliminar la relacion que tiene la tabla producto con gama_producto
+
+ALTER TABLE jardineria.producto DROP FOREIGN KEY producto_ibfk_1;
+
 -- Por la Relacion que tiene gama_producto con producto se debe de eliminar el indice de la tabla producto
 ALTER TABLE `producto` DROP INDEX `gama`;
 
